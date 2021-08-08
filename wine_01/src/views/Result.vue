@@ -1,28 +1,27 @@
 <template>
   <div class="container">
-    <section>
-      <div class="imgBox"></div>
-    </section>
+    <div class="imgBox gray"></div>
 
-    <div>
-      ResultContentBox
-      <ui class="contents"
-        >ResultContents
-        <li>Contents</li>
-        <li>Contents</li>
-        <li>Contents</li>
-        <li>Contents</li>
-      </ui>
-    </div>
+    <ui class="contents"
+      >ResultContents
+      <li>Contents</li>
+      <li>Contents</li>
+      <li>Contents</li>
+      <li>Contents</li>
+    </ui>
 
-    <div class="share">shareBox</div>
+    <Share class="share gray" />
     <div class="footer">footer</div>
   </div>
 </template>
 
 <script>
+import Share from '@/components/Share';
 export default {
   name: 'result',
+  components: {
+    Share,
+  },
 };
 </script>
 

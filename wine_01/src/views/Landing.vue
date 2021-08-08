@@ -1,15 +1,15 @@
 <template>
-  <div class="cantainer">
+  <div class="container">
     <section>
-      <div class="imgBox"></div>
+      <div class="imgBox gray">이미지</div>
     </section>
-    <div class="titleBox">
+    <div class="titleBox gray">
       <h1>내 취향 와인 테스트</h1>
       <h2>테스트 부가 설명</h2>
     </div>
 
     <Button @confirm="startTest">취향 알아보기</Button>
-    <Share class="share" />
+    <Share class="share gray" />
   </div>
 </template>
 
@@ -33,39 +33,10 @@ export default {
 </script>
 
 <style lang="scss" sceopd>
-.cantainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  margin: auto;
-  max-width: 420px;
-  padding: 2em 1em;
-  text-align: center;
-  div {
-    margin-bottom: 20px;
-    width: 100%;
-  }
-}
 .imgBox {
-  width: 100%;
-  background: var(--skeleton-background_color);
-  height: 500px;
-  opacity: 0.9;
+  height: 400px;
 }
 .titleBox {
-  width: 100%;
-  background: var(--skeleton-background_color);
   height: 300px;
-  opacity: 0.8;
-}
-.share {
-  background: var(--skeleton-background_color);
-  opacity: 0.8;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
 }
 </style>

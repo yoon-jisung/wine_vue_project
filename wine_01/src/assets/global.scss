@@ -13,7 +13,11 @@ body {
   background-color: #fefefe;
   margin: 0;
 }
-
+.gray {
+  background: var(--skeleton-background_color);
+  opacity: 0.7;
+  border-radius: 5px;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -25,5 +29,15 @@ body {
   text-align: center;
   div {
     margin-bottom: 20px;
+    width: 100%;
   }
+  section {
+    width: 100%;
+  }
+}
+.share {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }

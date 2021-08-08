@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div class="logo">logo</div>
-    <div class="progress">
+    <div class="logo gray">logo</div>
+    <div class="progress gray">
       progress bar
     </div>
 
@@ -21,24 +21,22 @@
           class="q-title"
           v-html="q.q"
         ></h2>
-        <!-- <scetion class="buttonSection">
-          <Button>a</Button>
-          <Button>a</Button>
-        </scetion> -->
-        <button
-          v-if="quizIndex === i && quizTransition"
-          :key="`a1-${i}`"
-          class="answer-btn"
-          @click="confirmAnswer(q.a[0])"
-          v-html="q.a[0].text"
-        ></button>
-        <button
-          v-if="quizIndex === i && quizTransition"
-          :key="`a2-${i}`"
-          class="answer-btn"
-          @click="confirmAnswer(q.a[1])"
-          v-html="q.a[1].text"
-        ></button>
+        <div class="buttonBox">
+          <button
+            v-if="quizIndex === i && quizTransition"
+            :key="`a1-${i}`"
+            class="answer-btn button"
+            @click="confirmAnswer(q.a[0].target, 1)"
+            v-html="q.a[0].text"
+          ></button>
+          <button
+            v-if="quizIndex === i && quizTransition"
+            :key="`a2-${i}`"
+            class="answer-btn button"
+            @click="confirmAnswer(q.a[1].target, 1)"
+            v-html="q.a[1].text"
+          ></button>
+        </div>
       </transition-group>
     </div>
   </div>
@@ -81,22 +79,15 @@ export default {
 
 <style lang="scss" scoped>
 .progress {
-  width: 100%;
   height: 50px;
-  background: var(--skeleton-background_color);
   margin-bottom: 40px;
 }
 .logo {
-  width: 100%;
-  background: var(--skeleton-background_color);
   height: 100px;
-}
-.buttonSection {
-  width: 100%;
 }
 .q-title {
   margin-top: 3em;
-  font-size: 1.8em;
+  font-size: 1.5rem;
   font-weight: 800;
   font-family: sandoll-gothicneo3;
   height: 200px;
@@ -104,8 +95,7 @@ export default {
 .div-slider {
   overflow: hidden;
   position: static;
-  width: 100vw;
-  max-width: 360px;
+  max-width: 460px;
 }
 .slide-leave-active {
   transition: 0.2s;
@@ -118,5 +108,9 @@ export default {
 }
 .slide-leave-to {
   transform: translate(-100%, 0);
+}
+.buttonBox {
+  display: flex;
+  flex-direction: column;
 }
 </style>
